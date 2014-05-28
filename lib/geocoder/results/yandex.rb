@@ -18,7 +18,7 @@ module Geocoder::Result
         if address_details['AdministrativeArea']['Locality'].has_key? 'LocalityName'
           address_details['AdministrativeArea']['Locality']['LocalityName']
         elsif address_details['AdministrativeArea']['Locality'].has_key? 'DependentLocality'
-          address_details['AdministrativeArea']['Locality']['DependentLocality'].has_key? 'DependentLocality' ? address_details['AdministrativeArea']['Locality']['DependentLocality']['DependentLocality']['DependentLocalityName'] : ''
+          address_details['AdministrativeArea']['Locality']['DependentLocality'].has_key?('DependentLocality') ? address_details['AdministrativeArea']['Locality']['DependentLocality']['DependentLocality']['DependentLocalityName'] : ''
         end
       elsif not sub_state_city.empty?
         sub_state_city
